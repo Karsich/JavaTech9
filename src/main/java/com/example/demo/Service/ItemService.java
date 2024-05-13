@@ -1,19 +1,20 @@
-package com.example.demo;
+package com.example.demo.Service;
 
+import com.example.demo.Model.Item;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
 
 @Service
-public class ShoppingListService {
-    private final List<ShoppingItem> shoppingList = new ArrayList<>();
+public class ItemService {
+    private final List<Item> shoppingList = new ArrayList<>();
 
-    public List<ShoppingItem> getAllItems() {
+    public List<Item> getAllItems() {
         return shoppingList;
     }
 
-    public ShoppingItem addItem(ShoppingItem item) {
+    public Item addItem(Item item) {
         shoppingList.add(item);
         return item;
     }
@@ -22,8 +23,8 @@ public class ShoppingListService {
         shoppingList.removeIf(item -> item.getId().equals(id));
     }
 
-    public ShoppingItem markAsPurchased(Long id) {
-        ShoppingItem item = shoppingList.stream()
+    public Item markAsPurchased(Long id) {
+        Item item = shoppingList.stream()
                 .filter(i -> i.getId().equals(id))
                 .findFirst()
                 .orElseThrow();

@@ -1,4 +1,3 @@
-// shopping-list.js
 const apiUrl = 'http://localhost:8080/api/shopping-list';
 
 class ShoppingList {

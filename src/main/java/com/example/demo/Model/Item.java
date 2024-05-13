@@ -1,14 +1,14 @@
-package com.example.demo;
+package com.example.demo.Model;
 
 import java.util.concurrent.atomic.AtomicInteger;
 
-public class ShoppingItem {
+public class Item {
     private static final AtomicInteger AUTO_ID = new AtomicInteger(0);
     private Long id;
     private String name;
     private boolean purchased;
 
-    public ShoppingItem(){
+    public Item(){
         this.id = (long)AUTO_ID.getAndIncrement();
     }
 
